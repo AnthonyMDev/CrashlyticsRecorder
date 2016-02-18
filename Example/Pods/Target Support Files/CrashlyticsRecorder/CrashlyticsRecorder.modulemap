@@ -1,0 +1,6 @@
+framework module CrashlyticsRecorder {
+  umbrella header "CrashlyticsRecorder-umbrella.h"
+
+  export *
+  module * { export * }
+}

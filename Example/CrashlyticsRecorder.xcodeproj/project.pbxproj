@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		50C441B1B7E16DB47D44948D /* Pods_CrashlyticsRecorder_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A23462C48CDDD0AD862DF /* Pods_CrashlyticsRecorder_Tests.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		92FC509F1C75687A000D184E /* CrashlyticsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		72E2789D625A7ED21A354DB8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		89A6D4311082A146C8916844 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrashlyticsAdapter.swift; path = Tests/CrashlyticsAdapter.swift; sourceTree = "<group>"; };
 		947DBADBB68FADD2BDB34305 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9EB017B09EBF71221CD06D85 /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B60A23462C48CDDD0AD862DF /* Pods_CrashlyticsRecorder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrashlyticsRecorder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				ECDAC099CFACC350050C9E15 /* Pods */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				92FC509F1C75687A000D184E /* CrashlyticsAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +315,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89A6D4311082A146C8916844 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -331,10 +331,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9EB017B09EBF71221CD06D85 /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";

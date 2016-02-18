@@ -1,0 +1,21 @@
+PODS:
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - CrashlyticsRecorder (0.1.0)
+  - Fabric (1.6.6)
+
+DEPENDENCIES:
+  - Crashlytics
+  - CrashlyticsRecorder (from `../`)
+  - Fabric
+
+EXTERNAL SOURCES:
+  CrashlyticsRecorder:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  CrashlyticsRecorder: 69cf58f6dd84c0519888d19f113a17746bbbd924
+  Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
+
+COCOAPODS: 0.39.0
