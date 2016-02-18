@@ -65,7 +65,7 @@ extension Answers: AnswersProtocol { }
 public func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Fabric.with([Crashlytics()])
     CrashlyticsRecorder.createSharedInstance(crashlytics: Crashlytics.sharedInstance())
-    AnswersRecorder.createSharedInstance(answers: Answers)
+    AnswersRecorder.createSharedInstance(answers: Answers.self)
 }
 ```
 
