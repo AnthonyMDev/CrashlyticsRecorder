@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+
+target 'CrashlyticsRecorder_Tests', :exclusive => true do
+  pod 'CrashlyticsRecorder', :path => '../'
+
+  
+end
