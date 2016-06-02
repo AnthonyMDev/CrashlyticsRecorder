@@ -206,6 +206,24 @@ public class CrashlyticsRecorder {
     }
     
     /**
+     *
+     * This allows you to record a non-fatal event, described by a Swift `ErrorType` object.
+     * These events will be grouped and displayed similarly to crashes. Keep in mind
+     * that this method can be expensive. Also, the total number of NSErrors that can be recorded during your 
+     * app's life-cycle is limited by a fixed-size circular buffer. If the buffer is overrun, the oldest data is
+     * dropped. Errors are relayed to Crashlytics on a subsequent launch of your application.
+     *
+     */
+    public func reportError(error: ErrorType) {
+        if let error = error as? ErrorReportable {
+            CrashlyticsRecorder.sharedInstance?.recordError(error)
+            
+        } else {
+            CrashlyticsRecorder.sharedInstance?.recordError(error as NSError)
+        }
+    }
+    
+    /**
      A convenience function that wraps the given closure in a do/catch block and reports any errors thrown to Crashlytics.
      
      - parameter closure: The throwing closure to be performed
