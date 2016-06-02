@@ -205,4 +205,28 @@ public class CrashlyticsRecorder {
         recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
     }
     
+    /**
+     A convenience function that wraps the given closure in a do/catch block and reports any errors thrown to Crashlytics.
+     
+     - parameter closure: The throwing closure to be performed
+     
+     - returns: `true` if no error was caught. `false` if an error was caught
+     */
+    public func doAndReportErrors(closure: () throws -> Void) -> Bool {
+        do {
+            try closure()
+            
+            return true
+            
+        } catch {
+            if let error = error as? ErrorReportable {
+                recordError(error)
+                
+            } else {
+                recordError(error as NSError)
+            }
+            
+            return false
+        }
+    }
 }
