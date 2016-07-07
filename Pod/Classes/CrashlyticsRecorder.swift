@@ -84,7 +84,7 @@ public class CrashlyticsRecorder {
      * Add logging that will be sent with your crash data. This logging will be visible in the Crashlytics UI.
      *
      **/
-    func log(format: String, args: CVarArgType...) {
+    public func log(format: String, args: CVarArgType...) {
         crashlyticsInstance.log(format, args: getVaList(args))
     }
     
