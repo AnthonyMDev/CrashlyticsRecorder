@@ -230,7 +230,7 @@ public class CrashlyticsRecorder {
      
      - returns: `true` if no error was caught. `false` if an error was caught
      */
-    public func doAndReportErrors(closure: () throws -> Void) -> Bool {
+    public func doAndReportErrors(@noescape closure: () throws -> Void) -> Bool {
         do {
             try closure()
             
