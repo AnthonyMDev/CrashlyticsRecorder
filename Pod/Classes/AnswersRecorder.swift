@@ -10,7 +10,7 @@ import Foundation
 
 public protocol AnswersProtocol: class {
     
-    static func logSignUp(_ signUpMethodOrNil: String?,
+    static func logSignUpWithMethod(_ signUpMethodOrNil: String?,
         success signUpSucceededOrNil: NSNumber?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     

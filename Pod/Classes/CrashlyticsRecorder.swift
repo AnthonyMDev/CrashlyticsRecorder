@@ -48,7 +48,7 @@ private extension ErrorReportable {
     
     func userInfo() -> [String: AnyObject]? {
         var userInfo = errorReportUserInfo() ?? [:]
-        if let title = errorReportTitle() { userInfo["Error Title"] = title }
+        if let title = errorReportTitle() { userInfo["Error Title"] = NSString(string: title) }
         
         return userInfo.isEmpty ? nil : userInfo
     }

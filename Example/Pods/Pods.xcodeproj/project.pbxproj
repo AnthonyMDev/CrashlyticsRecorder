@@ -329,6 +329,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					9424D0488EC30BFC8E39C3BB539DED4B = {
+						LastSwiftMigration = 0800;
+					};
 					F91B299DFEC53C055A7668F6F7DAF533 = {
 						LastSwiftMigration = 0800;
 					};
@@ -457,6 +460,7 @@
 				PRODUCT_NAME = CrashlyticsRecorder;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -626,6 +630,7 @@
 				PRODUCT_NAME = CrashlyticsRecorder;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
