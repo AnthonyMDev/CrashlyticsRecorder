@@ -10,24 +10,24 @@ import Foundation
 
 public protocol AnswersProtocol: class {
     
-    static func logSignUpWithMethod(signUpMethodOrNil: String?,
+    static func logSignUpWithMethod(_ signUpMethodOrNil: String?,
         success signUpSucceededOrNil: NSNumber?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logLoginWithMethod(loginMethodOrNil: String?,
+    static func logLoginWithMethod(_ loginMethodOrNil: String?,
         success loginSucceededOrNil: NSNumber?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logShareWithMethod(shareMethodOrNil: String?,
+    static func logShareWithMethod(_ shareMethodOrNil: String?,
         contentName contentNameOrNil: String?,
         contentType contentTypeOrNil: String?,
         contentId contentIdOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logInviteWithMethod(inviteMethodOrNil: String?,
+    static func logInviteWithMethod(_ inviteMethodOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logPurchaseWithPrice(itemPriceOrNil: NSDecimalNumber?,
+    static func logPurchaseWithPrice(_ itemPriceOrNil: NSDecimalNumber?,
         currency currencyOrNil: String?,
         success purchaseSucceededOrNil: NSNumber?,
         itemName itemNameOrNil: String?,
@@ -35,54 +35,54 @@ public protocol AnswersProtocol: class {
         itemId itemIdOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logLevelStart(levelNameOrNil: String?,
+    static func logLevelStart(_ levelNameOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logLevelEnd(levelNameOrNil: String?,
+    static func logLevelEnd(_ levelNameOrNil: String?,
         score scoreOrNil: NSNumber?,
         success levelCompletedSuccesfullyOrNil: NSNumber?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logAddToCartWithPrice(itemPriceOrNil: NSDecimalNumber?,
+    static func logAddToCartWithPrice(_ itemPriceOrNil: NSDecimalNumber?,
         currency currencyOrNil: String?,
         itemName itemNameOrNil: String?,
         itemType itemTypeOrNil: String?,
         itemId itemIdOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logStartCheckoutWithPrice(totalPriceOrNil: NSDecimalNumber?,
+    static func logStartCheckoutWithPrice(_ totalPriceOrNil: NSDecimalNumber?,
         currency currencyOrNil: String?,
         itemCount itemCountOrNil: NSNumber?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logRating(ratingOrNil: NSNumber?,
+    static func logRating(_ ratingOrNil: NSNumber?,
         contentName contentNameOrNil: String?,
         contentType contentTypeOrNil: String?,
         contentId contentIdOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
     
-    static func logContentViewWithName(contentNameOrNil: String?,
+    static func logContentViewWithName(_ contentNameOrNil: String?,
         contentType contentTypeOrNil: String?,
         contentId contentIdOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logSearchWithQuery(queryOrNil: String?,
+    static func logSearchWithQuery(_ queryOrNil: String?,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
-    static func logCustomEventWithName(eventName: String,
+    static func logCustomEventWithName(_ eventName: String,
         customAttributes customAttributesOrNil: [String : AnyObject]?)
     
 }
 
-public class AnswersRecorder {
+open class AnswersRecorder {
     
     /// The `AnswersRecorder` shared instance to be used for recording Answers events
-    public private(set) static var sharedInstance: AnswersRecorder?
+    open fileprivate(set) static var sharedInstance: AnswersRecorder?
     
-    private var answersClass: AnswersProtocol.Type
+    fileprivate var answersClass: AnswersProtocol.Type
     
-    private init(answersClass: AnswersProtocol.Type) {
+    fileprivate init(answersClass: AnswersProtocol.Type) {
         self.answersClass = answersClass
     }
     
@@ -93,7 +93,7 @@ public class AnswersRecorder {
      
      - returns: The created `CrashlyticsRecorder` shared instance
      */
-    public class func createSharedInstance(answers answersClass: AnswersProtocol.Type) -> AnswersRecorder {
+    open class func createSharedInstance(answers answersClass: AnswersProtocol.Type) -> AnswersRecorder {
         let recorder = AnswersRecorder(answersClass: answersClass)
         sharedInstance = recorder
         return recorder
@@ -107,7 +107,7 @@ public class AnswersRecorder {
      *  @param signUpSucceeded  The ultimate success or failure of the login
      *  @param customAttributes A dictionary of custom attributes to associate with this event.
      */
-    public func logSignUp(signUpMethod signUpMethod: String?, success: NSNumber?, customAttributes: [String : AnyObject]?) {
+    open func logSignUp(signUpMethod: String?, success: NSNumber?, customAttributes: [String : AnyObject]?) {
         answersClass.logSignUpWithMethod(signUpMethod, success: success, customAttributes: customAttributes)
     }
     
@@ -119,7 +119,7 @@ public class AnswersRecorder {
      *  @param loginSucceeded   The ultimate success or failure of the login
      *  @param customAttributes A dictionary of custom attributes to associate with this event.
      */
-    public func logLogin(loginMethod loginMethod: String?, success: NSNumber?, customAttributes: [String : AnyObject]?) {
+    open func logLogin(loginMethod: String?, success: NSNumber?, customAttributes: [String : AnyObject]?) {
         answersClass.logLoginWithMethod(loginMethod, success: success, customAttributes: customAttributes)
     }
     
@@ -133,7 +133,7 @@ public class AnswersRecorder {
      *  @param contentId        The unique identifier for this piece of content. Useful for finding the top shared item.
      *  @param customAttributes A dictionary of custom attributes to associate with this event.
      */
-    public func logShare(shareMethod shareMethod: String?,
+    open func logShare(shareMethod: String?,
         contentName: String?,
         contentType: String?,
         contentId: String?,
@@ -152,7 +152,7 @@ public class AnswersRecorder {
      *  @param inviteMethod     The method of invitation, e.g. GameCenter, Twitter, email.
      *  @param customAttributes A dictionary of custom attributes to associate with this event.
      */
-    public func logInvite(inviteMethod inviteMethod: String?, customAttributes: [String : AnyObject]?) {
+    open func logInvite(inviteMethod: String?, customAttributes: [String : AnyObject]?) {
         answersClass.logInviteWithMethod(inviteMethod, customAttributes: customAttributes)
     }
     
@@ -168,7 +168,7 @@ public class AnswersRecorder {
      *  @param itemId            The machine-readable, unique item identifier Example: SKU
      *  @param customAttributes  A dictionary of custom attributes to associate with this purchase.
      */
-    public func logPurchase(itemPrice itemPrice: NSDecimalNumber?,
+    open func logPurchase(itemPrice: NSDecimalNumber?,
         currency: String?,
         success: NSNumber?,
         itemName: String?,
@@ -190,7 +190,7 @@ public class AnswersRecorder {
      *  @param levelName        The level name
      *  @param customAttributes A dictionary of custom attributes to associate with this level start event.
      */
-    public func logLevelStart(levelName levelName: String?, customAttributes: [String : AnyObject]?) {
+    open func logLevelStart(levelName: String?, customAttributes: [String : AnyObject]?) {
         answersClass.logLevelStart(levelName, customAttributes: customAttributes)
     }
     
@@ -202,7 +202,7 @@ public class AnswersRecorder {
      *  @param levelCompletedSuccesfully A boolean representing whether or not the level was completed succesfully.
      *  @param customAttributes          A dictionary of custom attributes to associate with this event.
      */
-    public func logLevelEnd(levelName levelName: String?,
+    open func logLevelEnd(levelName: String?,
         score: NSNumber?,
         success: NSNumber?,
         customAttributes: [String : AnyObject]?) {
@@ -221,7 +221,7 @@ public class AnswersRecorder {
      *  @param itemId            The machine-readable, unique item identifier Example: SKU
      *  @param customAttributes  A dictionary of custom attributes to associate with this event.
      */
-    public func logAddToCart(itemPrice itemPrice: NSDecimalNumber?,
+    open func logAddToCart(itemPrice: NSDecimalNumber?,
         currency: String?,
         itemName: String?,
         itemType: String?,
@@ -245,7 +245,7 @@ public class AnswersRecorder {
      *  @param itemCount         The number of items in the cart.
      *  @param customAttributes  A dictionary of custom attributes to associate with this event.
      */
-    public func logStartCheckout(totalPrice totalPrice: NSDecimalNumber?,
+    open func logStartCheckout(totalPrice: NSDecimalNumber?,
         currency: String?,
         itemCount: NSNumber?,
         customAttributes: [String : AnyObject]?) {
@@ -265,7 +265,7 @@ public class AnswersRecorder {
      *  @param contentId            The unique identifier for this piece of content. Useful for finding the top shared item.
      *  @param customAttributes     A dictionary of custom attributes to associate with this event.
      */
-    public func logRating(rating: NSNumber?,
+    open func logRating(_ rating: NSNumber?,
         contentName: String?,
         contentType: String?, contentId: String?,
         customAttributes: [String : AnyObject]?) {
@@ -285,7 +285,7 @@ public class AnswersRecorder {
      *  @param contentId            The unique identifier for this piece of content. Useful for finding the top shared item.
      *  @param customAttributes     A dictionary of custom attributes to associate with this event.
      */
-    public func logContentView(contentName contentName: String?,
+    open func logContentView(contentName: String?,
         contentType: String?,
         contentId: String?,
         customAttributes: [String : AnyObject]?) {
@@ -302,7 +302,7 @@ public class AnswersRecorder {
      *  @param query            The user's query.
      *  @param customAttributes A dictionary of custom attributes to associate with this event.
      */
-    public func logSearch(query query: String?, customAttributes: [String : AnyObject]?) {
+    open func logSearch(query: String?, customAttributes: [String : AnyObject]?) {
         answersClass.logSearchWithQuery(query, customAttributes: customAttributes)
     }
     
@@ -326,7 +326,7 @@ public class AnswersRecorder {
      *                               and the type of media present in the tweet allows you to track how tweet length and the type of media influence
      *                               engagement.
      */
-    public func logCustomEvent(eventName eventName: String, customAttributes: [String : AnyObject]?) {
+    open func logCustomEvent(eventName: String, customAttributes: [String : AnyObject]?) {
         answersClass.logCustomEventWithName(eventName, customAttributes: customAttributes)
     }
     
