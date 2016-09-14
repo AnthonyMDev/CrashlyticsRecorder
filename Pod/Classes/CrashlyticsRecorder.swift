@@ -14,12 +14,12 @@ public protocol CrashlyticsProtocol: class {
     func setUserIdentifier(_ identifier: String?)
     func setUserName(_ name: String?)
     func setUserEmail(_ email: String?)
-    func setObjectValue(_ value: AnyObject?, forKey key: String)
+    func setObjectValue(_ value: Any?, forKey key: String)
     func setIntValue(_ value: Int32, forKey key: String)
     func setBoolValue(_ value: Bool, forKey key: String)
     func setFloatValue(_ value: Float, forKey key: String)
     
-    func recordError(_ error: NSError, withAdditionalUserInfo userInfo: [String : AnyObject]?)
+    func recordError(_ error: Error, withAdditionalUserInfo userInfo: [String : Any]?)
     
 }
 
@@ -214,7 +214,7 @@ open class CrashlyticsRecorder {
      * dropped. Errors are relayed to Crashlytics on a subsequent launch of your application.
      *
      */
-    open func reportError(_ error: Error) {
+    open func recordError(_ error: Error) {
         if let error = error as? ErrorReportable {
             CrashlyticsRecorder.sharedInstance?.recordError(error)
             

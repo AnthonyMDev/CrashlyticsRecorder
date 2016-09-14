@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50C441B1B7E16DB47D44948D /* Pods_CrashlyticsRecorder_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A23462C48CDDD0AD862DF /* Pods_CrashlyticsRecorder_Tests.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		92FC509F1C75687A000D184E /* CrashlyticsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */; };
+		A557A8CB2066C2432F0E0792 /* Pods_CrashlyticsRecorder_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5773D57D02E5F65D6A158D0E /* Pods_CrashlyticsRecorder_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1CB9FA3DE9FBA0470EFAAD4B /* CrashlyticsRecorder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CrashlyticsRecorder.podspec; path = ../CrashlyticsRecorder.podspec; sourceTree = "<group>"; };
+		4959B85730BC1A5E99C3E0AC /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5773D57D02E5F65D6A158D0E /* Pods_CrashlyticsRecorder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrashlyticsRecorder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* CrashlyticsRecorder_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashlyticsRecorder_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		72E2789D625A7ED21A354DB8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		89A6D4311082A146C8916844 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		830B548759E9C4A443F14EE5 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAdapter.swift; sourceTree = "<group>"; };
 		947DBADBB68FADD2BDB34305 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		9EB017B09EBF71221CD06D85 /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B60A23462C48CDDD0AD862DF /* Pods_CrashlyticsRecorder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrashlyticsRecorder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,21 +30,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C441B1B7E16DB47D44948D /* Pods_CrashlyticsRecorder_Tests.framework in Frameworks */,
+				A557A8CB2066C2432F0E0792 /* Pods_CrashlyticsRecorder_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48B3E839979A8C2AEFA47A5E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B60A23462C48CDDD0AD862DF /* Pods_CrashlyticsRecorder_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +44,8 @@
 				92FC509E1C75687A000D184E /* CrashlyticsAdapter.swift */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				ECDAC099CFACC350050C9E15 /* Pods */,
-				48B3E839979A8C2AEFA47A5E /* Frameworks */,
+				C60171BEB79B3087C02006DE /* Pods */,
+				60E886DB2C9B9DAEE65FAEC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,11 +84,19 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		ECDAC099CFACC350050C9E15 /* Pods */ = {
+		60E886DB2C9B9DAEE65FAEC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				89A6D4311082A146C8916844 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */,
-				9EB017B09EBF71221CD06D85 /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */,
+				5773D57D02E5F65D6A158D0E /* Pods_CrashlyticsRecorder_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C60171BEB79B3087C02006DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				830B548759E9C4A443F14EE5 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */,
+				4959B85730BC1A5E99C3E0AC /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,12 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CrashlyticsRecorder_Tests" */;
 			buildPhases = (
-				81059BD8B43679C6E4CBA9FC /* Check Pods Manifest.lock */,
+				ADE703E7F819F63A3014C1F1 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				AF159A2B71CF6ECA8251ED5A /* Embed Pods Frameworks */,
-				57C18C30AA929D2A40B10A74 /* Copy Pods Resources */,
+				09E4F1E33610E857F705C743 /* [CP] Embed Pods Frameworks */,
+				8EAD0A4B4F5982A706C9E3D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +131,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 607FACCF1AFB9204008FA782;
+						DevelopmentTeam = QHQRXVFW87;
 					};
 				};
 			};
@@ -169,14 +169,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57C18C30AA929D2A40B10A74 /* Copy Pods Resources */ = {
+		09E4F1E33610E857F705C743 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EAD0A4B4F5982A706C9E3D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,34 +199,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81059BD8B43679C6E4CBA9FC /* Check Pods Manifest.lock */ = {
+		ADE703E7F819F63A3014C1F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AF159A2B71CF6ECA8251ED5A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -242,8 +242,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -287,8 +289,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -307,14 +311,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89A6D4311082A146C8916844 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */;
+			baseConfigurationReference = 830B548759E9C4A443F14EE5 /* Pods-CrashlyticsRecorder_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = QHQRXVFW87;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -323,19 +330,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrashlyticsRecorder_Example.app/CrashlyticsRecorder_Example";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EB017B09EBF71221CD06D85 /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */;
+			baseConfigurationReference = 4959B85730BC1A5E99C3E0AC /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = QHQRXVFW87;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrashlyticsRecorder_Example.app/CrashlyticsRecorder_Example";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
