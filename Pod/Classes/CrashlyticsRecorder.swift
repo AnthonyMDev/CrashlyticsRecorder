@@ -40,13 +40,13 @@ public protocol ErrorReportable: Error {
      
      - returns: The user info for the error.
      */
-    func errorReportUserInfo() -> [String: AnyObject]?
+    func errorReportUserInfo() -> [String: Any]?
     
 }
 
 private extension ErrorReportable {
     
-    func userInfo() -> [String: AnyObject]? {
+    func userInfo() -> [String: Any]? {
         var userInfo = errorReportUserInfo() ?? [:]
         if let title = errorReportTitle() { userInfo["Error Title"] = NSString(string: title) }
         
@@ -188,7 +188,7 @@ open class CrashlyticsRecorder {
      * of your application.
      *
      */
-    open func recordError(_ error: NSError, withAdditionalUserInfo userInfo: [String: AnyObject]? = nil) {
+    open func recordError(_ error: NSError, withAdditionalUserInfo userInfo: [String: Any]? = nil) {
         crashlyticsInstance.recordError(error, withAdditionalUserInfo: userInfo)
     }
     
