@@ -202,7 +202,7 @@ open class CrashlyticsRecorder {
      *
      */
     open func recordError(_ error: ErrorReportable) {
-        recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
+        crashlyticsInstance.recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
     }
     
     /**
@@ -216,10 +216,10 @@ open class CrashlyticsRecorder {
      */
     open func recordError(_ error: Error) {
         if let error = error as? ErrorReportable {
-            CrashlyticsRecorder.sharedInstance?.recordError(error)
+            recordError(error)
             
         } else {
-            CrashlyticsRecorder.sharedInstance?.recordError(error as NSError)
+            crashlyticsInstance.recordError(error, withAdditionalUserInfo: nil)
         }
     }
     
