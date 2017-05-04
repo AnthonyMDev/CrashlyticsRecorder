@@ -11,7 +11,8 @@ import Crashlytics
 import CrashlyticsRecorder
 
 extension Crashlytics: CrashlyticsProtocol {
-    public func log(format: String, args: CVaListPointer) {
+
+    public func log(_ format: String, args: CVaListPointer) {
         #if DEBUG
             CLSNSLogv(format, args)
         #else
