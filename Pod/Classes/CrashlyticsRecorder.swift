@@ -251,4 +251,5 @@ open class CrashlyticsRecorder {
             return false
         }
     }
+    
 }
