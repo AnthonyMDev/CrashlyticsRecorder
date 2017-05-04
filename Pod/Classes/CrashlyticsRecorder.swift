@@ -228,7 +228,6 @@ open class CrashlyticsRecorder {
         }
     }
     
-    
     /// A convenience function that wraps the given closure in a do/catch block and reports any errors thrown to Crashlytics.
     ///
     /// - Parameter closure: The throwing closure to be performed
