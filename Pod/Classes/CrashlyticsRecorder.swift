@@ -23,6 +23,14 @@ public protocol CrashlyticsProtocol: class {
     
 }
 
+//TODO: Document
+public protocol CrashlyticsRecorderDelegate: class {
+    
+    //TODO: Document
+    func recorderShouldRecordError(_ error: Error) -> Error?
+
+}
+
 /**
  *  An `Error` can conform to this protocol to provide information to be included in an error report to the Crashlytics UI.
  */
@@ -57,8 +65,13 @@ private extension ErrorReportable {
 
 open class CrashlyticsRecorder {
     
+    // MARK: - Instance Properties
+    
     /// The `CrashlyticsRecorder` shared instance to be used for recording crashes and errors.
     open fileprivate(set) static var sharedInstance: CrashlyticsRecorder?
+    
+    /// The delegate for CrashlyticsRecorder
+    weak public var delegate: CrashlyticsRecorderDelegate?
     
     fileprivate let crashlyticsInstance: CrashlyticsProtocol
     
@@ -189,7 +202,13 @@ open class CrashlyticsRecorder {
      *
      */
     open func recordError(_ error: NSError, withAdditionalUserInfo userInfo: [String: Any]? = nil) {
-        crashlyticsInstance.recordError(error, withAdditionalUserInfo: userInfo)
+        guard let delegate = delegate else {
+            crashlyticsInstance.recordError(error, withAdditionalUserInfo: userInfo)
+            return
+        }
+        
+        guard let delegateError = delegate.recorderShouldRecordError(error) else { return }
+        crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: userInfo)
     }
     
     /**
@@ -202,7 +221,13 @@ open class CrashlyticsRecorder {
      *
      */
     open func recordError(_ error: ErrorReportable) {
-        crashlyticsInstance.recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
+        guard let delegate = delegate else {
+            crashlyticsInstance.recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
+            return
+        }
+        
+        guard let delegateError = delegate.recorderShouldRecordError(error as Error) else { return }
+        crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: error.userInfo())
     }
     
     /**
@@ -219,7 +244,14 @@ open class CrashlyticsRecorder {
             recordError(error)
             
         } else {
-            crashlyticsInstance.recordError(error, withAdditionalUserInfo: nil)
+            
+            guard let delegate = delegate else {
+                crashlyticsInstance.recordError(error, withAdditionalUserInfo: nil)
+                return
+            }
+            
+            guard let delegateError = delegate.recorderShouldRecordError(error) else { return }
+            crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: nil)
         }
     }
     
