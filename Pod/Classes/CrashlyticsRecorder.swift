@@ -29,7 +29,7 @@ public protocol CrashlyticsRecorderDelegate: class {
     /// Use this function to decide if an error should be recorded by `CrashlyticsRecorder`.
     /// The delegate can modify an error prior to it being recorded.
     ///
-    /// - Note: If a `CrashlyticsRecorder` instance doesn not have a `delegate` then all errors will be recorded.
+    /// - Note: If a `CrashlyticsRecorder` instance does not have a `delegate` then all errors will be recorded.
     ///
     /// - Parameter error: The error received by `CrashlyticsRecorder`
     /// - Returns: An optional error to be recorded. Return `nil` if you do not want an error to be recorded.
@@ -183,28 +183,17 @@ open class CrashlyticsRecorder {
     /// buffer is overrun, the oldest data is dropped. Errors are relayed to Crashlytics on a subsequent launch
     /// of your application.
     open func recordError(_ error: NSError, withAdditionalUserInfo userInfo: [String: Any]? = nil) {
-        guard let delegate = delegate else {
-            crashlyticsInstance.recordError(error, withAdditionalUserInfo: userInfo)
-            return
+        var newInfo = error.userInfo
+        if let userInfo = userInfo {
+            for (key, value) in userInfo {
+                newInfo[key] = value
+            }
         }
         
-        guard let delegateError = delegate.recorderShouldRecordError(error) else { return }
-        crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: userInfo)
-    }
-    
-    /// This allows you to record a non-fatal event, described by a Swift `ErrorType` object that conforms to the
-    /// `ErrorReportable` protocol. These events will be grouped and displayed similarly to crashes. Keep in mind
-    /// that this method can be expensive. Also, the total number of NSErrors that can be recorded during your
-    /// app's life-cycle is limited by a fixed-size circular buffer. If the buffer is overrun, the oldest data is
-    /// dropped. Errors are relayed to Crashlytics on a subsequent launch of your application.
-    open func recordError(_ error: ErrorReportable) {
-        guard let delegate = delegate else {
-            crashlyticsInstance.recordError(error as NSError, withAdditionalUserInfo: error.userInfo())
-            return
-        }
+        let error = NSError(domain: error.domain, code: error.code, userInfo: newInfo)
+        guard let finalError = confirmErrorWithDelegate(error) else { return }
         
-        guard let delegateError = delegate.recorderShouldRecordError(error as Error) else { return }
-        crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: error.userInfo())
+        crashlyticsInstance.recordError(finalError, withAdditionalUserInfo: nil)
     }
     
     /// This allows you to record a non-fatal event, described by a Swift `ErrorType` object.
@@ -213,19 +202,22 @@ open class CrashlyticsRecorder {
     /// app's life-cycle is limited by a fixed-size circular buffer. If the buffer is overrun, the oldest data is
     /// dropped. Errors are relayed to Crashlytics on a subsequent launch of your application.
     open func recordError(_ error: Error) {
+        guard let error = confirmErrorWithDelegate(error) else { return }
+        
         if let error = error as? ErrorReportable {
-            recordError(error)
+            crashlyticsInstance.recordError(error, withAdditionalUserInfo: error.userInfo())
             
         } else {
-            
-            guard let delegate = delegate else {
-                crashlyticsInstance.recordError(error, withAdditionalUserInfo: nil)
-                return
-            }
-            
-            guard let delegateError = delegate.recorderShouldRecordError(error) else { return }
-            crashlyticsInstance.recordError(delegateError, withAdditionalUserInfo: nil)
+            crashlyticsInstance.recordError(error, withAdditionalUserInfo: nil)
         }
+    }
+    
+    func confirmErrorWithDelegate(_ error: Error) -> Error? {
+        guard let delegate = delegate else {
+            return error
+        }
+        
+        return delegate.recorderShouldRecordError(error)
     }
     
     /// A convenience function that wraps the given closure in a do/catch block and reports any errors thrown to Crashlytics.
