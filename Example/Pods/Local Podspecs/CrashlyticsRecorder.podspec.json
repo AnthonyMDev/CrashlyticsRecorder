@@ -1,6 +1,6 @@
 {
   "name": "CrashlyticsRecorder",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "summary": "A wrapper for the Crashlytics framework allowing it to be used as a transitive dependency via dependency injection.",
   "homepage": "https://github.com/AnthonyMDev/CrashlyticsRecorder",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/AnthonyMDev/CrashlyticsRecorder.git",
-    "tag": "2.0.2"
+    "tag": "2.1.0"
   },
   "social_media_url": "https://twitter.com/AnthonyMDev",
   "platforms": {
