@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
-  s.name             = "CrashlyticsRecorder"
-  s.version          = "2.2.0"
-  s.summary          = "A wrapper for the Crashlytics framework allowing it to be used as a transitive dependency via dependency injection."
+  s.name             = 'CrashlyticsRecorder'
+  s.version          = '2.2.0'
+  s.swift_version    = '4.2'
+  s.summary          = 'A wrapper for the Crashlytics framework allowing it to be used as a transitive dependency via dependency injection.'
 
-  s.homepage         = "https://github.com/AnthonyMDev/CrashlyticsRecorder"
+  s.homepage         = 'https://github.com/AnthonyMDev/CrashlyticsRecorder'
   s.license          = 'MIT'
   s.author           = { "Anthony Miller" => "anthony@app-order.com" }
   s.source           = { :git => "https://github.com/AnthonyMDev/CrashlyticsRecorder.git", :tag => s.version.to_s }

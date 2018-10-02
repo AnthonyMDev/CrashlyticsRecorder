@@ -1,7 +1,7 @@
 PODS:
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
-  - CrashlyticsRecorder (2.1.0)
+  - CrashlyticsRecorder (2.2.0)
   - Fabric (1.6.11)
 
 DEPENDENCIES:
@@ -9,15 +9,20 @@ DEPENDENCIES:
   - CrashlyticsRecorder (from `../`)
   - Fabric
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+
 EXTERNAL SOURCES:
   CrashlyticsRecorder:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  CrashlyticsRecorder: 3e7bdfd3de88474a0031ac8d5b2a6c26f6e71022
+  CrashlyticsRecorder: 01559dc7c407ffee3de54f8bf83aca38f30deda3
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
 
 PODFILE CHECKSUM: ca98e858fa773b167c40663c0d0b4c17b46e21ec
 
-COCOAPODS: 1.3.0
+COCOAPODS: 1.5.3

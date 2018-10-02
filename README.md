@@ -75,7 +75,7 @@ You must have a `Fabric` account to use `Crashlytics` and the `CrashlyticsRecor
 
 ## Author
 
-Anthony Miller, anthony@app-order.com
+Anthony Miller, anthonymdev@gmail.com
 
 ## License
 

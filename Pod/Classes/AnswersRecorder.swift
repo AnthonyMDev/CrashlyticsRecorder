@@ -78,7 +78,7 @@ public protocol AnswersProtocol: class {
 open class AnswersRecorder {
     
     /// The `AnswersRecorder` shared instance to be used for recording Answers events
-    open fileprivate(set) static var sharedInstance: AnswersRecorder?
+    public fileprivate(set) static var sharedInstance: AnswersRecorder?
     
     fileprivate var answersClass: AnswersProtocol.Type
     
