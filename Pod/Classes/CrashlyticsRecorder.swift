@@ -68,7 +68,7 @@ open class CrashlyticsRecorder {
     // MARK: - Instance Properties
     
     /// The `CrashlyticsRecorder` shared instance to be used for recording crashes and errors.
-    open fileprivate(set) static var sharedInstance: CrashlyticsRecorder?
+    public fileprivate(set) static var sharedInstance: CrashlyticsRecorder?
     
     /// The delegate for CrashlyticsRecorder
     weak public var delegate: CrashlyticsRecorderDelegate?
