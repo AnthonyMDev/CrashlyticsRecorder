@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CB9FA3DE9FBA0470EFAAD4B /* CrashlyticsRecorder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CrashlyticsRecorder.podspec; path = ../CrashlyticsRecorder.podspec; sourceTree = "<group>"; };
+		1CB9FA3DE9FBA0470EFAAD4B /* CrashlyticsRecorder.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = CrashlyticsRecorder.podspec; path = ../CrashlyticsRecorder.podspec; sourceTree = "<group>"; };
 		4959B85730BC1A5E99C3E0AC /* Pods-CrashlyticsRecorder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashlyticsRecorder_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrashlyticsRecorder_Tests/Pods-CrashlyticsRecorder_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5773D57D02E5F65D6A158D0E /* Pods_CrashlyticsRecorder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrashlyticsRecorder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* CrashlyticsRecorder_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashlyticsRecorder_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
