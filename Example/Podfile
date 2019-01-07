@@ -3,8 +3,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'CrashlyticsRecorder_Tests' do
-  pod 'CrashlyticsRecorder', :path => '../'
+  pod 'CrashlyticsRecorder/Crashlytics', :path => '../'
+  pod 'CrashlyticsRecorder/Answers', :path => '../'
+  pod 'CrashlyticsRecorder/FirebaseAnalytics', :path => '../'
 
+  pod 'Firebase/Core'
   pod 'Fabric'
   pod 'Crashlytics'
 
