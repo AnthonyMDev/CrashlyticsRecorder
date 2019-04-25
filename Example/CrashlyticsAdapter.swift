@@ -9,6 +9,7 @@
 import Foundation
 import Crashlytics
 import CrashlyticsRecorder
+import Firebase
 
 extension Crashlytics: CrashlyticsProtocol {
 
@@ -22,3 +23,5 @@ extension Crashlytics: CrashlyticsProtocol {
 }
 
 extension Answers: AnswersProtocol { }
+
+extension Analytics: AnalyticsProtocol { }

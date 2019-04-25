@@ -1,6 +1,6 @@
 {
   "name": "CrashlyticsRecorder",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "swift_version": "4.2",
   "summary": "A wrapper for the Crashlytics framework allowing it to be used as a transitive dependency via dependency injection.",
   "homepage": "https://github.com/AnthonyMDev/CrashlyticsRecorder",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/AnthonyMDev/CrashlyticsRecorder.git",
-    "tag": "2.3.0"
+    "tag": "2.4.0"
   },
   "social_media_url": "https://twitter.com/AnthonyMDev",
   "platforms": {
@@ -19,5 +19,18 @@
     "tvos": "9.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*"
+  "subspecs": [
+    {
+      "name": "Crashlytics",
+      "source_files": "Pod/Classes/CrashlyticsRecorder.swift"
+    },
+    {
+      "name": "Answers",
+      "source_files": "Pod/Classes/AnswersRecorder.swift"
+    },
+    {
+      "name": "FirebaseAnalytics",
+      "source_files": "Pod/Classes/AnalyticsRecorder.swift"
+    }
+  ]
 }
