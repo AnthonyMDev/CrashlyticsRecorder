@@ -68,12 +68,12 @@ public class AnalyticsRecorder {
 
 public extension AnalyticsRecorder {
 
-    public func logEvent(_ name: AnalyticsEvent, parameters: [AnalyticsParameter: Any]? = nil) {
+    func logEvent(_ name: AnalyticsEvent, parameters: [AnalyticsParameter: Any]? = nil) {
         let parameters = parameters?.reduce(into: [:]) { result, x in result[x.key.rawValue] = x.value }
         logEvent(name.rawValue, parameters: parameters)
     }
 
-    public func setUserProperty(_ value: String?, forName name: AnalyticsUserProperty) {
+    func setUserProperty(_ value: String?, forName name: AnalyticsUserProperty) {
         analyticsClass.setUserProperty(value, forName: name.rawValue)
     }
 }

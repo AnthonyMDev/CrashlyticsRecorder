@@ -7,21 +7,9 @@
 //
 
 import Foundation
-import Crashlytics
+import FirebaseCrashlytics
 import CrashlyticsRecorder
 import Firebase
 
-extension Crashlytics: CrashlyticsProtocol {
-
-    public func log(_ format: String, args: CVaListPointer) {
-        #if DEBUG
-            CLSNSLogv(format, args)
-        #else
-            CLSLogv(format, args)
-        #endif
-    }
-}
-
-extension Answers: AnswersProtocol { }
-
+extension Crashlytics: CrashlyticsProtocol { }
 extension Analytics: AnalyticsProtocol { }

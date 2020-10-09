@@ -1,14 +1,11 @@
-platform :ios, '8.0'
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '13.0'
+
 use_frameworks!
 
 target 'CrashlyticsRecorder_Tests' do
   pod 'CrashlyticsRecorder/Crashlytics', :path => '../'
-  pod 'CrashlyticsRecorder/Answers', :path => '../'
   pod 'CrashlyticsRecorder/FirebaseAnalytics', :path => '../'
 
   pod 'Firebase/Core'
-  pod 'Fabric'
-  pod 'Crashlytics'
-
+  pod 'Firebase/Crashlytics'
 end
