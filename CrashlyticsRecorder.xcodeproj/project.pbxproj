@@ -7,19 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		732B61561F04CD2E0099423C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 732B61551F04CD2E0099423C /* Info.plist */; };
-		732B615E1F04CD370099423C /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 732B61591F04CD370099423C /* .gitkeep */; };
-		732B615F1F04CD370099423C /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 732B615B1F04CD370099423C /* .gitkeep */; };
-		732B61601F04CD370099423C /* AnswersRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B615C1F04CD370099423C /* AnswersRecorder.swift */; };
+		63773057253103F00073B7E9 /* AnalyticsRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63773056253103F00073B7E9 /* AnalyticsRecorder.swift */; };
 		732B61611F04CD370099423C /* CrashlyticsRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B615D1F04CD370099423C /* CrashlyticsRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63773056253103F00073B7E9 /* AnalyticsRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsRecorder.swift; sourceTree = "<group>"; };
 		732B614A1F04CCE10099423C /* CrashlyticsRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CrashlyticsRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732B61551F04CD2E0099423C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		732B61591F04CD370099423C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		732B615B1F04CD370099423C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		732B615C1F04CD370099423C /* AnswersRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersRecorder.swift; sourceTree = "<group>"; };
 		732B615D1F04CD370099423C /* CrashlyticsRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,8 +68,8 @@
 		732B615A1F04CD370099423C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				63773056253103F00073B7E9 /* AnalyticsRecorder.swift */,
 				732B615B1F04CD370099423C /* .gitkeep */,
-				732B615C1F04CD370099423C /* AnswersRecorder.swift */,
 				732B615D1F04CD370099423C /* CrashlyticsRecorder.swift */,
 			);
 			path = Classes;
@@ -129,6 +126,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 732B61401F04CCE10099423C;
@@ -146,9 +144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732B615F1F04CD370099423C /* .gitkeep in Resources */,
-				732B61561F04CD2E0099423C /* Info.plist in Resources */,
-				732B615E1F04CD370099423C /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732B61601F04CD370099423C /* AnswersRecorder.swift in Sources */,
+				63773057253103F00073B7E9 /* AnalyticsRecorder.swift in Sources */,
 				732B61611F04CD370099423C /* CrashlyticsRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +204,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -257,7 +252,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -283,7 +278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anthonymdev.CrashlyticsRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -302,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anthonymdev.CrashlyticsRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
